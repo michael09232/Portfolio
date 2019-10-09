@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+
+*{
+	margin: 0;
+	padding: 0;
+}
+html,body {
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.nav{
+	width: 350px;
+	height: auto;
+	position: absolute;
+	top: 20%;
+	left: 0;
+}
+.nav img{
+	border-radius: 100%;
+	border-style: solid;
+	color: green;
+	width: 100px;
+	height: 100px;
+	margin-bottom: 10px;
+	margin-top: -100px;
+}
+.nav a{
+	text-decoration: none;
+	font-size: 30px;
+	font-family: verdana;
+	font-weight: bold;
+	height: 90px;
+	margin: 5px 0;
+	float: left; 
+	display: inline-block;
+	background-color: green;
+	color: white;
+	line-height: 90px;
+	text-align: center;
+	transition: 300ms;
+}
+a.active, .nav a:hover{
+	width: 100%;
+	background-color: green;
+	color: blue;
+}
+.a{
+	width: 95%;
+}
+.b{
+	width: 85%;
+}
+.c{
+	width: 80%;
+}
+.d{
+	width: 90%;
+}
+.content{
+	position: absolute;
+	width: 930px;
+	min-height: 500px;
+	height: auto;
+	/*background-color: red;*/
+	right: 0;
+	top: 10%;
+}
+.home{
+	position: absolute;
+	right: 0;
+	bottom: -50px;
+	color: green;
+	font-family: verdana;
+	text-transform: uppercase;
+}
+.home h1{
+	font-size: 95px;
+	padding-right: 90px;
+	border-bottom: 1px solid green;
+}
+.home h3{
+	text-align: center;
+	font-size: 28px;
+	padding: 5px 0;
+	opacity: 0.5;
+}
+.aboutus{
+	position: absolute;
+	right: 0;
+	top: 10px;
+	color: green;
+	font-family: century gothic;
+	padding: 0 60px;
+	display: none;
+}
+.aboutus p{
+	font-size: 20px;
+	line-height: 27px;
+	margin-bottom: 15px;
+}
+.gallery{
+	position: absolute;
+	right: 0;
+	top: 10px;
+	color: white;
+	padding: 0 60px;
+	display: none;
+}
+.gallery .image{
+	width: 29%;
+	margin: 2%;
+	float: left;
+}
+.image img{
+	border-radius: 10%;
+	border-style: solid;
+	color: green;
+	width: 200px;
+	height: 200px;
+	transition: all ease 0.5s;
+	-webkit-transition: all ease 0.5s;
+	transform: scale(1);
+	-webkit-transform: scale(1);
+}
+.image img:hover {
+	transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+}
+.contactus{
+	position: absolute;
+	right: 0;
+	top: 10px;
+	color: white;
+	padding: 0 60px;
+	display: none;
+}
+.inputtext {
+	width: 55%;
+	height: 65px;
+	border: 3px solid green;
+	color: green;
+	background-color: rgba(0,0,0,0.7);
+	font-size: 20px;
+	padding: 0 30px;
+	float: left;
+	margin-bottom: 15px;
+}
+.inputmessage {
+	width: 55%;
+	height: 135px;
+	border: 3px solid green;
+	color: green;
+	background-color: rgba(0,0,0,0.7);
+	font-size: 20px;
+	padding: 0 30px;
+	float: left;
+}
+.submitbutton{
+	width: 160px;
+	height: 65px;
+	font-family: arial;
+	background-color: black;
+	color: green;
+	font-size: 28px;
+	border-color: green;
+	border-radius: 20%;
+	border: solid;
+	font-weight: bold;
+	float: left;
+	clear: both;
+	margin-top: 35px;
+	margin-left: 180px;
+}
+
+
+
+body {
+    margin: 0;
+    font: normal 75% Arial, Helvetica, sans-serif;
+}
+
+canvas {
+    display: block;
+    vertical-align: bottom;
+}
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://img.freepik.com/free-vector/dark-background-with-golden-abstract-shapes_52683-21963.jpg?size=626&ext=jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+<head>
+	<title>My Portfolio</title>
+
+	  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+	 <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+</head>
+<body>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+ <div id="particles-js"></div> 
+
+<div class="background">
+<div class="nav">
+	<img src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/70627951_515998495864982_6625091859871956992_n.jpg?_nc_cat=110&_nc_eui2=AeF_sibdZF7ioM2H3JNC7PHWItVB2hlzqLzxVHXjU4bRsfvBgUEEnhvcE7owHlwW5yYIniHaJGnV1ZKLrgwsDbF4JnCyW7fepp5n_9zXv3Y5Vg&_nc_oc=AQlxjcoB7WGDQOR_iqmO6vmHWwOrVTbuHfA1p7W_Qke1GCm59BIgnGH8eXCvVS4O6Hc&_nc_ht=scontent.fcgy1-1.fna&oh=03ede86ec881cd5f078c20ac23b84fa0&oe=5DF822CF">
+	<a class="a active" href="#">HOME</a>
+	<a class="b" href="#">ABOUT ME</a>
+	<a class="c" href="#">GALLERY</a>
+	<a class="d" href="#">CONTACT US</a>
+
+</div>
+
+<div class="content">
+	<div class="home">
+		<h1 class="animated bounceInDown">I am Michael</h1>
+		<h3 class="animated slideInRight">Designer // Developer</h3>
+	</div>
+	
+	<div class="aboutus">
+
+		<p class="hello" style="text-align: center;"><img class="animated zoomIn" src="https://media1.tenor.com/images/8daffc84762e918bb7e54ec93bb16f44/tenor.gif?itemid=4505206" width="300px" height="150px" style="border-radius: 40%"></p>
+
+
+		<p class="animated slideInLeft"><b>Hello Friends,</b></p>
+		<p class="animated bounceInDown">I am a person who is positive about every aspect of life.<br> There are many things I like to do, to see, and to experience.<br> I like to read, I like to write; I like to think, I like to dream; I like to talk, I like to listen.<br> I like to see the sunrise in the morning, I like to see the moonlight at night;<br> I like to feel the music flowing on my face, I like to smell the wind coming from the ocean.<br> I like to look at the clouds in the sky with a blank mind, I like to do thought experiment<br> when I cannot sleep in the middle of the night. I like flowers in spring, rain in summer,<br> leaves in autumn, and snow in winter.<br> I like country’s peace, I like metropolis’ noise; I like the beautiful west lake in Hangzhou,<br> I like delicious food and comfortable shoes; I like good books and romantic movies.<br> I like the land and the nature, I like people. And, I like to laugh.</p>
+		<p class="animated bounceInDown">I always wanted to be a great writer,<br> like Victor Hugo who wrote "Les Miserable", or like Roman Roland who wrote "John Christopher".<br> They have influenced millions of people through their books.<br> Of course, I am nowhere close to these people, yet.<br> I am just someone who does some teaching, some research, and some writing.<br> But my dream is still alive This is a brief introduction of myself.<br> If you are interested in knowing more, read my articles or take a look at my pictures.<br> Do not expect too much, and keep your sense of humor.</p>
+	</div>
+	<div class="gallery">
+		<div class="image">
+			<img class="animated zoomIn" src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/57083600_420389418759224_4237641787679703040_n.jpg?_nc_cat=104&_nc_eui2=AeFV9nrRpHh730L0Humlpt2PMRAQjBu6rC5Sn6NfQD7rl5teY1f3cJ5C3i5S-eMNQJ3Bl2EabCwQUgWB2Swf-1eX06hCzcx8wEdFL7P3ZlLlVw&_nc_oc=AQl91xCeXTN_Pawv6mKF6iebLMVC7yUjuQgrmdCcjXz6wp8malq5ngwYBZTveSYCF0U&_nc_ht=scontent.fcgy1-1.fna&oh=915552ea5d28841488880c95c2b442f0&oe=5E3C9A06">
+		</div>
+		<div class="image">
+			<img class="animated slideInDown" src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/48928868_446591312543322_1488145102218985472_n.jpg?_nc_cat=109&_nc_eui2=AeGEruVB0lAgNFcUOb9rUkuuh2eejdRJsmJHTWpz443kzKXXmkPkWAz75izaf7Hq1Ykzc96Y3Jka-H8WKU7XSwXZnX9nsZ-cPjjQiHBO0d5EXQ&_nc_oc=AQkCRQVv75jD0hFLYOYwWYGk_B9JRhI9SxFVw1rjafywWq2LAbTlhKyufhLwHUas7xo&_nc_ht=scontent.fcgy1-1.fna&oh=4b50ca99556fdbfee9e329c1ef053789&oe=5DF57F53">
+		</div>
+		<div class="image">
+			<img class="animated zoomIn" src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/68907431_496670937797738_6114979268435902464_n.jpg?_nc_cat=110&_nc_eui2=AeFYuQMgHRfbnRBVnbxTgaJ38GswTAka6LdGiRu-hCvA9g47kI9918mEOJt-wIFlEq993mgx0hvXadInmpUFRR313iFhOA8aE2ou0jhReELF5w&_nc_oc=AQlgsVuNxlkC6y0URniWkWjHm5dxPOObozPADhXBcgQryEhlo73tcA6NvGlb4XE7Juo&_nc_ht=scontent.fcgy1-1.fna&oh=2aa9bc37fdeacb68e9158f92979a19f0&oe=5DF3D080">
+		</div>
+		<div class="image">
+			<img class="animated slideInRight" src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/48357306_2212116462186509_3070985123689136128_n.jpg?_nc_cat=107&_nc_eui2=AeEqEUipAAPHhh5uS22RxMbLA7d5Nay7tjsC4mP02oWqNqa8amjyNVn_k3Fj0AfxqTxpmKTHXacSKI-QG0aUBDXUEZuFcocpcUfu3XgW4ZKKdQ&_nc_oc=AQnQIDx5eDlZ6lqeO4TuIg87Od2sXGoCLbxT6xxNY_O15aRMB4J2eP9rmHytAQAEnFE&_nc_ht=scontent.fcgy1-1.fna&oh=ac2b9aef3577c56b4175dd1777f38244&oe=5DFB0B78">
+		</div>
+		<div class="image">
+			<img class="animated zoomIn" src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/68850776_491603208304511_1063172407700750336_n.jpg?_nc_cat=109&_nc_eui2=AeEbSqZycBJUS61eENt3LzivVS78TnXqQ4WbUh0yKckEx4EMSrWOPdlrxsPO9_sCMXunon9r_uoggqhOTUeWhDltG8gWbR08O6Yk6CqMdOfCWQ&_nc_oc=AQl1ZR_kusrWxzR__k3lwXPPgf93QltmumnSNexg7MgPUlpI8RGUIgnLCCDtojUj5YQ&_nc_ht=scontent.fcgy1-1.fna&oh=c8e6505a57a740dfeb044c657148c497&oe=5DFB9A9A">
+		</div>
+		<div class="image">
+			<img class="animated slideInLeft" src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/48385205_2212087525522736_713150985601548288_n.jpg?_nc_cat=108&_nc_eui2=AeFjuhlAm7TKtDmNPOaypcy1GnWIyXpJG4x17OBJEW-UOS9OI_vhC-HEIIlhgdiygbJ-js3TlF3wT1oxQ9sjAN70SZsEWrN9PhydyWEiZWWnbw&_nc_oc=AQnQYZd3z3Oy69FK4NNBCt_wM8JRm_rPwjjCe7JDcw6qdUgELuP4JeznZiC3iHMSGss&_nc_ht=scontent.fcgy1-1.fna&oh=57c7fb6b55c89d12dc838d762f01e655&oe=5E2B13EC">
+		</div>
+		<div class="image">
+			<img class="animated zoomIn" src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/39467965_292993714832129_1214618709813886976_n.jpg?_nc_cat=104&_nc_eui2=AeGj20jvL1ud9gOcj7k2KSQWhgPcFJ70bbs9WvZQiqwdstfgLkm68uuvh8F6MtUGWT60GFkPLz-pBrFUVuutLgnyvUHVEcgrA6kODrQO9Q_eKg&_nc_oc=AQkno7KcGRK6QsY0__Nxu2-38yjlOL_bjBqbXzipj8m2Yjm0WOrVA4CRSKMpuxw6rSU&_nc_ht=scontent.fcgy1-1.fna&oh=4b23c9ed672c34b7b465d5329acdfacc&oe=5E2CF942">
+		</div>
+		<div class="image">
+			<img class="animated slideInUp" src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/48368521_2212062032191952_8384999669125611520_n.jpg?_nc_cat=103&_nc_eui2=AeHZfQ9usnVvEOUDFKshtg10Nu9mXb7bYEXUKT1oUdgcBp6Sc7KHz6eWEBLUACKWwMh5fVK9LQmrPoOsc6mvBMoWcT5TKuHiQtymkXNqqoEmxA&_nc_oc=AQnZeJ5G0PEXiG6_IN9HxHyUq1-zXBy3z9pYRjF4EvGEGSCdVYaEL7NHsDxBlMLiQYA&_nc_ht=scontent.fcgy1-1.fna&oh=1de956634a0f73e8f6c2ecae30b5dee8&oe=5DF66088">
+		</div>
+		<div class="image">
+			<img  class="animated zoomIn"src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/37032665_253486035449564_21499399397965824_n.jpg?_nc_cat=101&_nc_eui2=AeHwuKDOr3XxD3Q6a4VdEsl17xwXif4dJCCyyIGjRZVr_fHdBOC4dJz8qF2TfGqU6p1S5euT8vp81F5Y7XuAOfu_xVmp3Lt5bQTn2DMN9w8Nbw&_nc_oc=AQmVFLfaAj0WYuMh11c6R2UyKTPjhb2WYrhQFUfEuwXz8w1oLCsxTLSkcqLarjPIzhs&_nc_ht=scontent.fcgy1-1.fna&oh=eac83bfa51354cbfea258387db2b1e70&oe=5E3DC0A8">
+		</div>
+	</div>
+
+	<div class="contactus">
+		<div class="contactform">
+			<form class="animated bounceInDown" action="index.html" method="post">
+				<input type="text" name="" class="inputtext" value="First Name : ">
+				<input type="text" name="" class="inputtext" value="Last Name : ">
+				<input type="text" name="" class="inputtext" value="Your Email : ">
+				<textarea cols="4" rows="6" class="inputmessage">Your Messages: </textarea>
+				<input type="Button" name="" class="submitbutton" value="Submit">
+			</form>
+		</div>
+	</div>
+
+</div>
+
+</div>
+
+
+
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		$('a').click(function(){
+			//alert("i am click");
+			var selected = $(this);
+			$('a').removeClass('active');
+			$(selected).addClass('active');
+		});
+
+		var $a = $('.a'),
+		$b = $('.b'),
+		$c = $('.c'),
+		$d = $('.d'),
+		$home = $('.home'),
+		$aboutus = $('.aboutus'),
+		$gallery = $('.gallery'),
+		$contactus = $('.contactus');
+
+		$a.click(function(){
+			$home.fadeIn();
+			$aboutus.fadeOut();
+			$gallery.fadeOut();
+			$contactus.fadeOut();
+		});
+		$b.click(function(){
+			$aboutus.fadeIn();
+			$home.fadeOut();
+			$gallery.fadeOut();
+			$contactus.fadeOut();
+		});
+		$c.click(function(){
+			$gallery.fadeIn();
+			$home.fadeOut();
+			$aboutus.fadeOut();
+			$contactus.fadeOut();
+		});
+		$d.click(function(){
+			$contactus.fadeIn();
+			$home.fadeOut();
+			$gallery.fadeOut();
+			$aboutus.fadeOut();
+		});
+	});
+
+
+	particlesJS("particles-js", {"particles":{"number":{"value":80,"density":{"enable":true,"value_area":800}},"color":{"value":"#ffffff"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"":{"src":"","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#ffffff","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":100,"duration":2,"opacity":8,"speed":1},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
